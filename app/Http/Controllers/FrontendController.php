@@ -13,7 +13,7 @@ class FrontendController extends Controller
        // $likes=$like->count();
         $dislikes=Like::where('like',0)->count();
         $locale=app()->getLocale();
-        $comments=Comment::select('id','comment_'.$locale,'name','email')->take(20)->get();
+        $comments=Comment::select('id','comment_'.$locale,'name','email')->get();
         return view('index',compact('comments','likes','dislikes'));
     }
 }

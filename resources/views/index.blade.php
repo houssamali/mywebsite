@@ -18,9 +18,9 @@
          {{$likes}}
           
             <a href="{{url('remove-like')}}" class="button-like"><i class="fa-solid fa-thumbs-down like-me "></i></a>
-{{$dislikes}}
+       {{$dislikes}}
         </form>
-</div>
+    </div>
        </div>
 
 
@@ -31,7 +31,7 @@
             <h1 class="text-danger text-uppercase fs-1 fw-bold">{{__('messages.Software Developer')}}</h1>
             <h2 class="fs-4">{{__('messages.Houssam Almohamadi')}}</h2>
             <p class="mt-4 text-muted">{{__('messages.Am Backend Developer and Web Desinger with Laravel FrameWork i love coding and do hard tasks with learning a New thing Everday')}}</p>
-        <a href="#portfolio" class="btn btn-secondary">{{__('messages.My Work')}}</a>
+        
         
     </div>
        </div>
@@ -74,26 +74,7 @@
                     <h3 class="fs-4 mb-3">{{__('messages.Skill which i had learnned in my roadmap')}}</h3>
                      <p class="text-muted">{{__('messages.Am still Fresh student i dont work in any company but i know do any project')}}!</p>
                     </div>
-                     <div class="row text-center text-uppercase my-3">
-                       <div class="col-sm-4">
-                        <div class="fact-item">
-                            <h4 class="fs-1 fw-bold">100</h4>
-                            <p class="text-muted">Projects Completed</p>
-                        </div>
-                       </div>
-                       <div class="col-sm-4">
-                        <div class="fact-item">
-                            <h4 class="fs-1 fw-bold">90</h4>
-                            <p class="text-muted">happy clients</p>
-                        </div>
-                       </div>
-                       <div class="col-sm-4">
-                        <div class="fact-item">
-                            <h4 class="fs-1 fw-bold">95</h4>
-                            <p class="text-muted">Positive Reviews</p>
-                        </div>
-                       </div>
-                     </div>
+                   
 
 
 
@@ -350,10 +331,10 @@
                     <img src="{{asset('assets/images/profile_image.png')}}"  class="w-50 img-fluid rounded-circle">
                   </div>
                   <div class="d-flex justify-content-center">
-                    <h6>name<h6>
+                    <h6>{{$comment->name}}<h6>
                      </div>
                     <div class="d-flex justify-content-center">
-                    <h6>email</h6>
+                    <h6>{{$comment->email}}</h6>
                        </div>
                     <p>{{$comment->comment_ar}}</p>
                     <p>{{$comment->comment_en}}</p>
@@ -368,10 +349,10 @@
 
           
 
-</div>  
-</div>
+    </div>  
+     </div>
 
-<div class="row">
+ <div class="row">
     <div class="col-md-12 d-flex justify-content-center">
 
 
@@ -379,8 +360,8 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{__('messages.add comment')}}</h5>
@@ -395,11 +376,17 @@
         <div class="form-control">
             <label for="">{{__('messages.comment_ar')}}</label>
             <textarea name="comment_ar" class="w-100"></textarea>
+            @error('comment_ar')
+            <small class="form-text text-danger">{{$message}}</small>
+            @enderror
         </div>
 
         <div class="form-control">
             <label for="">{{__('messages.comment_en')}}</label>
             <textarea name="comment_en" class="w-100"></textarea>
+            @error('comment_en')
+            <small class="form-text text-danger">{{$message}}</small>
+            @enderror
         </div>
 
         
@@ -415,16 +402,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-   <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    {{__('messages.add comment')}}
-</button>-->
 
     </div>
 </div>
