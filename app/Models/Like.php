@@ -13,5 +13,10 @@ class Like extends Model
         'user_id',
         'like',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','user_id');
+    }
     
 }

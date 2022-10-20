@@ -1,52 +1,5 @@
 @include('admin.layouts.header')
-<div id="logo">
-    <span class="big-logo">.S!mple</span>
-    <span class="small-logo">S!M</span>
-</div>
-<div id="left-menu">
-    <ul>
-        <li class="active"><a href="#">
-            <i class="ion-ios-person-outline"></i>
-            <span>Dashboard</span>
-        </a></li>
-       
-        <li><a href="{{url('home')}}">
-            <i class="ion-ios-albums-outline"></i>
-            <span>Main Table</span>
-        </a></li>
-        <li><a href="{{url('users')}}">
-            <i class="ion-ios-chatboxes-outline"></i>
-            <span>Users</span>
-        </a></li>
-       
-        <li class="has-sub">
-            <a href="#">
-                <i class="ion-ios-chatboxes-outline"></i>
-                <span>Report</span>
-            </a>
-            <ul>
-                <li><a href="#">Report Item 1</a></li>
-                <li><a href="#">Report Item 2</a></li>
-                <li><a href="#">Report Item 3</a></li>
-                <li><a href="#">Report Item 3</a></li>
-                <li><a href="#">Report Item 3</a></li>
-                <li><a href="#">Report Item 3</a></li>
-                <li><a href="#">Report Item 3</a></li>
-            </ul>
-        </li>
-      
-        <li><a href="#">
-            <i class="ion-ios-chatboxes-outline"></i>
-            <span>Setting</span>
-        </a></li>
-
-        <li><a href="">
-            <i class="ion-ios-chatboxes-outline"></i>
-            <span>Logout</span>
-        </a></li>
-
-    </ul>
-</div>
+@include('admin.layouts.slide')
 <div id="main-content">
     <div id="header">
         <div class="header-left float-left">
@@ -61,7 +14,7 @@
        
         
         <div class="card">
-            <div class="title">Users</div>
+            <div class="title">Users Like</div>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">

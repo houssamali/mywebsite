@@ -44,9 +44,15 @@ Route::group(
         Route::middleware(['auth','isAdmin'])->group(function(){
             Route::get('/home',[DashboardController::class,'index']);
             Route::get('/users',[DashboardController::class,'users']);
+            Route::get('/comments',[DashboardController::class,'comments']);
+            Route::get('/likes',[DashboardController::class,'likes']);
             Route::get('/show-user/{id}',[DashboardController::class,'show_user']);
             Route::get('/show-comment/{id}',[DashboardController::class,'show_comment']);
             Route::get('/show-like/{id}',[DashboardController::class,'show_like']);
+
+
+            Route::get('/delete-comment/{id}',[DashboardController::class,'delete_comment']);
+            Route::get('/delete-user/{id}',[DashboardController::class,'delete_user']);
        
 
       

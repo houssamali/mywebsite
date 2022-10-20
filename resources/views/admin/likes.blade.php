@@ -1,5 +1,9 @@
 @include('admin.layouts.header')
-@include('admin.layouts.slide')
+@include('admin.layouts.slide')  
+
+
+
+
 <div id="main-content">
     <div id="header">
         <div class="header-left float-left">
@@ -14,7 +18,7 @@
        
         
         <div class="card">
-            <div class="title">Users</div>
+            <div class="title">Users Likes</div>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -26,27 +30,25 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Created_at</th>
-      <th>Delete</th>
+      <th scope="col">Like</th>
+      <th scope="col">Date</th>
       
     </tr>
   </thead>
   <tbody>
-    
-    
+    @foreach($likes as $like)
+    <td>{{$like->id}}</td>
+    <td>{{$like->user->name}}</td>
+    <td>liked</td>
+    <td>{{$like->created_at}}</td>
     <tr>
-      <th scope="row">{{$user->id}}</th>
-      <td>{{$user->name}}</td>
-      <td>{{$user->email}}</td>
-      <td>{{$user->created_at}}</td>
-      <td><a class="btn btn-danger" href="{{url('delete-user')}}/{{$user->id}}">Delete</a></td>
+      
      
      
      
     </tr>
     
-   
+    @endforeach
   </tbody>
 </table>
 

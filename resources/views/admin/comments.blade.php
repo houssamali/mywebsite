@@ -14,7 +14,7 @@
        
         
         <div class="card">
-            <div class="title">Users</div>
+            <div class="title">Comments</div>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -26,27 +26,29 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Created_at</th>
-      <th>Delete</th>
+      <th scope="col">Comment_AR</th>
+      <th>Comment_EN</th>
+      <th>Date</th>
+      <th> Delete</th>
       
     </tr>
   </thead>
   <tbody>
-    
+    @foreach($comments as $comment)
     
     <tr>
-      <th scope="row">{{$user->id}}</th>
-      <td>{{$user->name}}</td>
-      <td>{{$user->email}}</td>
-      <td>{{$user->created_at}}</td>
-      <td><a class="btn btn-danger" href="{{url('delete-user')}}/{{$user->id}}">Delete</a></td>
+      <th scope="row">{{$comment->id}}</th>
+      <td>{{$comment->user->name}}</td>
+      <td>{{$comment->comment_ar}}</td>
+      <td>{{$comment->comment_en}}</td>
+      <td>{{$comment->created_at}}</td>
+      <td><a class="btn btn-danger" href="{{url('delete-comment')}}/{{$comment->id}}">Delete</a></td>
      
      
      
     </tr>
     
-   
+    @endforeach
   </tbody>
 </table>
 
