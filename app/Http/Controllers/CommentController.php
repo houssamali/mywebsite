@@ -7,7 +7,7 @@ use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-//use SerializesModels;
+
 
 class CommentController extends Controller
 {

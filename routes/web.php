@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FrontendController;
@@ -41,11 +42,15 @@ Route::group(
         
         Auth::routes();
         Route::middleware(['auth','isAdmin'])->group(function(){
-            Route::get('/home',function(){
-       return view('home');
+            Route::get('/home',[DashboardController::class,'index']);
+            Route::get('/users',[DashboardController::class,'users']);
+            Route::get('/show-user/{id}',[DashboardController::class,'show_user']);
+            Route::get('/show-comment/{id}',[DashboardController::class,'show_comment']);
+            Route::get('/show-like/{id}',[DashboardController::class,'show_like']);
+       
 
       
-            });
+           
       
         });
        
@@ -55,6 +60,7 @@ Route::group(
        Route::post('add-comment',[CommentController::class, 'addComment']);
        Route::post('add-like',[AddLikeController::class, 'addlike']);
        Route::get('remove-like',[AddLikeController::class, 'removelike']);
+
         });
 
         

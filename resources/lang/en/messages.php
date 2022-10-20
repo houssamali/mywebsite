@@ -6,7 +6,7 @@ return [
     'Home'=>'Home',
     'About'=>'About',
     'Services'=>'Services',
-    'Portoflio'=>'Portoflio',
+    'Portoflio'=>'Portfolio',
     'Testimonials'=>'Testimonials',
     'Contact'=>'Contact',
     "Hello I'm"=>"Hello I'm",

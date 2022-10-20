@@ -16,4 +16,10 @@ class Comment extends Model
         'comment_ar',
         'comment_en',
     ];
+
+
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','user_id');
+    }
 }
